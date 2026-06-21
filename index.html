@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Resume</title>
+    <title>Lebenslauf - Max Mustermann</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
         }
         body {
-            background: #f4f7fc;
+            background: #e9edf2;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -20,43 +20,143 @@
             padding: 30px;
         }
         .card {
-            max-width: 1000px;
+            max-width: 1050px;
             width: 100%;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
             display: grid;
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr 2.2fr;
             overflow: hidden;
         }
+        /* Sidebar (Left) */
         .sidebar {
-            background: #1a2b4c;
+            background: #1e2e4a;
             color: white;
             padding: 40px 30px;
         }
-        .sidebar h1 { font-size: 28px; margin-bottom: 5px; }
-        .sidebar .title { font-size: 16px; color: #aab8d9; margin-bottom: 30px; }
-        .sidebar h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin: 25px 0 15px 0; color: #aab8d9; }
-        .sidebar p, .sidebar li { font-size: 14px; line-height: 1.6; color: #d0d9ed; list-style: none; }
+        .photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            background: #2c405e;
+            margin: 0 auto 25px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #6c8cff;
+            font-size: 40px;
+            color: #aab8d9;
+            overflow: hidden;
+        }
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sidebar h1 {
+            font-size: 28px;
+            text-align: center;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+        }
+        .sidebar .title {
+            text-align: center;
+            font-size: 16px;
+            color: #aab8d9;
+            font-weight: 400;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #2c405e;
+            padding-bottom: 20px;
+        }
+        .sidebar h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 25px 0 12px 0;
+            color: #8ea4d6;
+            font-weight: 600;
+        }
+        .sidebar p, .sidebar li {
+            font-size: 14px;
+            line-height: 1.7;
+            color: #d0d9ed;
+            list-style: none;
+        }
         .sidebar ul { padding: 0; }
-        .sidebar ul li { margin-bottom: 8px; }
-        .skill-bar { background: #2a3d64; height: 6px; border-radius: 4px; margin-top: 5px; }
-        .skill-fill { background: #6c8cff; height: 6px; border-radius: 4px; }
+        .sidebar ul li { margin-bottom: 6px; }
+        .skill-bar {
+            background: #2c405e;
+            height: 6px;
+            border-radius: 4px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+        }
+        .skill-fill {
+            background: #6c8cff;
+            height: 6px;
+            border-radius: 4px;
+        }
+        .contact-item {
+            margin-bottom: 8px;
+        }
+        .contact-item span {
+            font-weight: 600;
+            color: white;
+            margin-right: 5px;
+        }
+
+        /* Main Content (Right) */
         .main {
-            padding: 40px 40px;
+            padding: 40px 45px;
             background: white;
         }
-        .main h2 { font-size: 18px; text-transform: uppercase; letter-spacing: 1px; color: #1a2b4c; border-bottom: 2px solid #f0f3f8; padding-bottom: 10px; margin: 25px 0 15px 0; }
+        .main h2 {
+            font-size: 17px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #1e2e4a;
+            border-bottom: 3px solid #6c8cff;
+            padding-bottom: 8px;
+            margin: 30px 0 18px 0;
+        }
         .main h2:first-of-type { margin-top: 0; }
-        .exp-item { margin-bottom: 20px; }
-        .exp-item h4 { font-size: 16px; color: #1a2b4c; }
-        .exp-item .meta { font-size: 13px; color: #6c8cff; font-weight: 600; }
-        .exp-item p { font-size: 14px; color: #555; margin-top: 5px; line-height: 1.5; }
-        .contact-icons a { color: #aab8d9; text-decoration: none; display: inline-block; margin-right: 15px; font-size: 14px; }
-        .contact-icons a:hover { color: white; }
         
+        .exp-item {
+            margin-bottom: 22px;
+        }
+        .exp-item h4 {
+            font-size: 16px;
+            color: #1e2e4a;
+            font-weight: 700;
+        }
+        .exp-item .meta {
+            font-size: 13px;
+            color: #6c8cff;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .exp-item p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin-top: 4px;
+        }
+        .exp-item ul {
+            margin-top: 6px;
+            padding-left: 18px;
+        }
+        .exp-item ul li {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+
+        /* Mobile Responsive */
         @media (max-width: 700px) {
             .card { grid-template-columns: 1fr; }
+            .photo { width: 100px; height: 100px; }
         }
     </style>
 </head>
@@ -65,60 +165,113 @@
 <div class="card">
     <!-- LEFT SIDEBAR -->
     <div class="sidebar">
-        <h1>Jane Doe</h1>
-        <div class="title">Full Stack Developer</div>
-        
-        <h3>Contact</h3>
+        <!-- 1. PHOTO: Replace the "📸" with your own image later -->
+        <div class="photo">
+            <span>📸</span>
+            <!-- 
+                If you want to add a real photo, upload a "foto.jpg" to the repository 
+                and replace the <span>📸</span> with:
+                <img src="foto.jpg" alt="Profilbild">
+            -->
+        </div>
+
+        <h1>Max Mustermann</h1>
+        <div class="title">IT-Projektmanager &amp; Full-Stack Entwickler</div>
+
+        <!-- PERSÖNLICHE DATEN (Very important for German CVs) -->
+        <h3>Persönliche Daten</h3>
         <ul>
-            <li>📧 jane.doe@email.com</li>
-            <li>📞 +1 (555) 123-4567</li>
-            <li>📍 San Francisco, CA</li>
+            <li class="contact-item"><span>📅</span> Geboren: 15.05.1990</li>
+            <li class="contact-item"><span>📍</span> Berlin, Deutschland</li>
+            <li class="contact-item"><span>🌍</span> Nationalität: Deutsch</li>
+            <li class="contact-item"><span>📧</span> max.mustermann@email.de</li>
+            <li class="contact-item"><span>📞</span> +49 171 1234567</li>
+            <li class="contact-item"><span>🔗</span> linkedin.com/in/maxmuster</li>
         </ul>
 
-        <h3>Skills</h3>
+        <!-- SPRACHKENNTNISSE (Languages) -->
+        <h3>Sprachkenntnisse</h3>
         <ul>
-            <li>JavaScript / React <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div></li>
+            <li>Deutsch (Muttersprache)</li>
+            <li>Englisch (Verhandlungssicher / C1)</li>
+            <li>Französisch (Grundkenntnisse / B1)</li>
+        </ul>
+
+        <!-- TECHNISCHE KENNTNISSE (Skills with bars) -->
+        <h3>Technische Kenntnisse</h3>
+        <ul>
+            <li>React / Next.js <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div></li>
+            <li>Node.js / Express <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div></li>
             <li>Python / Django <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div></li>
-            <li>Node.js <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div></li>
-            <li>SQL / MongoDB <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div></li>
+            <li>Datenbanken (SQL, MongoDB) <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div></li>
+            <li>AWS / Azure <div class="skill-bar"><div class="skill-fill" style="width: 60%;"></div></div></li>
         </ul>
 
-        <h3>Languages</h3>
+        <!-- INTERESSEN (Germans like to see hobbies/interests) -->
+        <h3>Interessen</h3>
         <ul>
-            <li>English (Native)</li>
-            <li>Spanish (Fluent)</li>
+            <li>🚴 Radfahren &amp; Triathlon</li>
+            <li>📚 Fachbücher &amp; Tech-Blogs</li>
+            <li>🎸 Gitarre spielen</li>
         </ul>
     </div>
 
     <!-- RIGHT MAIN CONTENT -->
     <div class="main">
-        <h2>About Me</h2>
-        <p style="font-size: 15px; color: #444; line-height: 1.6;">Results-driven developer with 5+ years of experience building scalable web applications. Passionate about clean code, UI/UX design, and mentoring junior developers.</p>
 
-        <h2>Experience</h2>
+        <!-- BERUFLICHES PROFIL -->
+        <h2>Berufliches Profil</h2>
+        <p style="font-size: 15px; color: #333; line-height: 1.6; margin-bottom: 5px;">
+            Ergebnisorientierter IT-Experte mit <strong>6+ Jahren Erfahrung</strong> in der agilen Softwareentwicklung 
+            und im Projektmanagement. Spezialisiert auf die Konzeption skalierbarer Webanwendungen und die 
+            Optimierung von Entwicklungsprozessen. Kommunikationsstark und erfahren in der Leitung 
+            interdisziplinärer Teams.
+        </p>
+
+        <!-- BERUFSERFAHRUNG -->
+        <h2>Berufserfahrung</h2>
         <div class="exp-item">
-            <h4>Senior Developer - TechCorp</h4>
-            <div class="meta">2021 - Present</div>
-            <p>Led a team of 5 engineers to rebuild the company's main dashboard, increasing load speed by 40%.</p>
+            <h4>Senior Entwickler / Projektleiter</h4>
+            <div class="meta">TechCorp GmbH, Berlin | Seit 06/2021</div>
+            <ul>
+                <li>Leitung eines 5-köpfigen Entwicklerteams bei der Neuentwicklung der Unternehmensplattform.</li>
+                <li>Steigerung der Performance um 40 % durch Implementierung einer Microservices-Architektur.</li>
+                <li>Einführung von Code-Reviews und Pair-Programming zur Steigerung der Code-Qualität.</li>
+            </ul>
         </div>
         <div class="exp-item">
-            <h4>Junior Developer - StartupHub</h4>
-            <div class="meta">2018 - 2021</div>
-            <p>Developed RESTful APIs and integrated payment gateways using Stripe, handling 10k+ transactions monthly.</p>
+            <h4>Full-Stack Entwickler</h4>
+            <div class="meta">StartupHub AG, München | 03/2018 – 05/2021</div>
+            <ul>
+                <li>Entwicklung von RESTful APIs und Integration von Zahlungsdienstleistern (Stripe).</li>
+                <li>Betreuung von über 10.000 Transaktionen monatlich und Sicherstellung der DSGVO-Konformität.</li>
+                <li>Modernisierung der Legacy-Frontends mit React und TypeScript.</li>
+            </ul>
         </div>
 
-        <h2>Education</h2>
+        <!-- AUSBILDUNG / STUDIUM -->
+        <h2>Ausbildung &amp; Studium</h2>
         <div class="exp-item">
-            <h4>B.S. Computer Science</h4>
-            <div class="meta">Stanford University | 2014 - 2018</div>
-            <p>GPA: 3.8. Focus on AI and Database Systems.</p>
+            <h4>M.Sc. Wirtschaftsinformatik</h4>
+            <div class="meta">Technische Universität Berlin | 2014 – 2018</div>
+            <p>Abschlussnote: 1,3. Schwerpunkte: IT-Sicherheit und Datenbankdesign.</p>
+        </div>
+        <div class="exp-item">
+            <h4>Ausbildung: Fachinformatiker Anwendungsentwicklung</h4>
+            <div class="meta">IHK Berlin | 2011 – 2014</div>
+            <p>Abgeschlossen mit Auszeichnung (Beste IHK-Prüfung im Bezirk).</p>
         </div>
 
-        <h2>Projects</h2>
+        <!-- ZERTIFIKATE (Optional but impressive for Germans) -->
+        <h2>Zertifikate</h2>
         <div class="exp-item">
-            <h4>Portfolio Builder</h4>
-            <p>Open-source tool that helps designers create portfolios in 5 minutes. (Check my GitHub!)</p>
+            <ul>
+                <li><strong>PRINCE2® Foundation</strong> – 2023</li>
+                <li><strong>AWS Certified Solutions Architect</strong> – 2022</li>
+                <li><strong>Scrum Master (PSM I)</strong> – 2020</li>
+            </ul>
         </div>
+
     </div>
 </div>
 
