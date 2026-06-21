@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: #f4f7fc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 30px;
+        }
+        .card {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            overflow: hidden;
+        }
+        .sidebar {
+            background: #1a2b4c;
+            color: white;
+            padding: 40px 30px;
+        }
+        .sidebar h1 { font-size: 28px; margin-bottom: 5px; }
+        .sidebar .title { font-size: 16px; color: #aab8d9; margin-bottom: 30px; }
+        .sidebar h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin: 25px 0 15px 0; color: #aab8d9; }
+        .sidebar p, .sidebar li { font-size: 14px; line-height: 1.6; color: #d0d9ed; list-style: none; }
+        .sidebar ul { padding: 0; }
+        .sidebar ul li { margin-bottom: 8px; }
+        .skill-bar { background: #2a3d64; height: 6px; border-radius: 4px; margin-top: 5px; }
+        .skill-fill { background: #6c8cff; height: 6px; border-radius: 4px; }
+        .main {
+            padding: 40px 40px;
+            background: white;
+        }
+        .main h2 { font-size: 18px; text-transform: uppercase; letter-spacing: 1px; color: #1a2b4c; border-bottom: 2px solid #f0f3f8; padding-bottom: 10px; margin: 25px 0 15px 0; }
+        .main h2:first-of-type { margin-top: 0; }
+        .exp-item { margin-bottom: 20px; }
+        .exp-item h4 { font-size: 16px; color: #1a2b4c; }
+        .exp-item .meta { font-size: 13px; color: #6c8cff; font-weight: 600; }
+        .exp-item p { font-size: 14px; color: #555; margin-top: 5px; line-height: 1.5; }
+        .contact-icons a { color: #aab8d9; text-decoration: none; display: inline-block; margin-right: 15px; font-size: 14px; }
+        .contact-icons a:hover { color: white; }
+        
+        @media (max-width: 700px) {
+            .card { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <!-- LEFT SIDEBAR -->
+    <div class="sidebar">
+        <h1>Jane Doe</h1>
+        <div class="title">Full Stack Developer</div>
+        
+        <h3>Contact</h3>
+        <ul>
+            <li>📧 jane.doe@email.com</li>
+            <li>📞 +1 (555) 123-4567</li>
+            <li>📍 San Francisco, CA</li>
+        </ul>
+
+        <h3>Skills</h3>
+        <ul>
+            <li>JavaScript / React <div class="skill-bar"><div class="skill-fill" style="width: 90%;"></div></div></li>
+            <li>Python / Django <div class="skill-bar"><div class="skill-fill" style="width: 75%;"></div></div></li>
+            <li>Node.js <div class="skill-bar"><div class="skill-fill" style="width: 70%;"></div></div></li>
+            <li>SQL / MongoDB <div class="skill-bar"><div class="skill-fill" style="width: 80%;"></div></div></li>
+        </ul>
+
+        <h3>Languages</h3>
+        <ul>
+            <li>English (Native)</li>
+            <li>Spanish (Fluent)</li>
+        </ul>
+    </div>
+
+    <!-- RIGHT MAIN CONTENT -->
+    <div class="main">
+        <h2>About Me</h2>
+        <p style="font-size: 15px; color: #444; line-height: 1.6;">Results-driven developer with 5+ years of experience building scalable web applications. Passionate about clean code, UI/UX design, and mentoring junior developers.</p>
+
+        <h2>Experience</h2>
+        <div class="exp-item">
+            <h4>Senior Developer - TechCorp</h4>
+            <div class="meta">2021 - Present</div>
+            <p>Led a team of 5 engineers to rebuild the company's main dashboard, increasing load speed by 40%.</p>
+        </div>
+        <div class="exp-item">
+            <h4>Junior Developer - StartupHub</h4>
+            <div class="meta">2018 - 2021</div>
+            <p>Developed RESTful APIs and integrated payment gateways using Stripe, handling 10k+ transactions monthly.</p>
+        </div>
+
+        <h2>Education</h2>
+        <div class="exp-item">
+            <h4>B.S. Computer Science</h4>
+            <div class="meta">Stanford University | 2014 - 2018</div>
+            <p>GPA: 3.8. Focus on AI and Database Systems.</p>
+        </div>
+
+        <h2>Projects</h2>
+        <div class="exp-item">
+            <h4>Portfolio Builder</h4>
+            <p>Open-source tool that helps designers create portfolios in 5 minutes. (Check my GitHub!)</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
